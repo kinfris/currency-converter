@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.input_schema {
+
+}
+
+.input_wrapper {
+    height: 215px;
+    display: flex;
+    align-items: center;
+}
+
+.input_wrapper input{
+    padding: 8px;
+}
+
+.convert_info {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid black;
+}

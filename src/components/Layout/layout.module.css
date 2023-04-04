@@ -1,0 +1,11 @@
+.header{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.currency_choose_block{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
