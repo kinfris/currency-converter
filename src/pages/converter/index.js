@@ -1,7 +1,7 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {CurrencyService} from "@/services/currency";
 import styles from "./converter.module.css";
-import {Button, OutlinedInput } from '@mui/material';
+import {Button, OutlinedInput} from '@mui/material';
 
 export default function Currency() {
     const [inputValue, setInputValue] = useState('');
@@ -17,6 +17,8 @@ export default function Currency() {
     const handleButtonClick = async () => {
         try {
             setIsLoading(true);
+            setIsError(false);
+            setConvertInfo(null);
             const splitInputString = inputValue.split(' ');
             const convertFrom = splitInputString[1].toUpperCase();
             const convertTo = splitInputString[3].toUpperCase();
@@ -40,15 +42,15 @@ export default function Currency() {
             <main className={styles.main}>
                 <div className={styles.input_schema}>Write what you want convert like in this
                     example<br/> &quot;amount&quot;
-                    &quot;convert from currency&quot; in &quot;convert to currency&quot;
+                    &quot;convert from currency&quot; to &quot;convert to currency&quot;
                 </div>
                 <div className={styles.input_wrapper}>
                     <OutlinedInput value={inputValue} onChange={handleInputChange}/>
                     <Button onClick={handleButtonClick} variant="contained" disabled={isLoading}>Convert</Button>
-                    {isError && <div>{isError}</div>}
-                    {convertInfo && <div className={styles.convert_info}>rate: {convertInfo.info.rate},
-                        amount: {convertInfo.result}</div>}
                 </div>
+                {isError && <div className={styles.error_text}>{isError}</div>}
+                {convertInfo && <div className={styles.convert_info}>rate: {convertInfo.info.rate},
+                    amount: {convertInfo.result}</div>}
             </main>
         </>
     )

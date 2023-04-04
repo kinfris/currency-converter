@@ -2,6 +2,7 @@
     padding: 15px;
     display: flex;
     justify-content: space-between;
+    background-color: rgba(153, 51, 204, 0.2);
 }
 
 .currency_choose_block{
