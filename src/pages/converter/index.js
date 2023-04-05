@@ -40,9 +40,9 @@ export default function Currency() {
     return (
         <>
             <main className={styles.main}>
-                <div className={styles.input_schema}>Write what you want convert like in this
-                    example<br/> &quot;amount&quot;
-                    &quot;convert from currency&quot; to &quot;convert to currency&quot;
+                <div className={styles.input_schema}>Write what you want convert like in this example<br/>
+                    &quot;amount&quot; &quot;convert from currency&quot; to &quot;convert to currency&quot; <br/>
+                    <span className={styles.text_example}>(10 USD to BYN)</span>
                 </div>
                 <div className={styles.input_wrapper}>
                     <OutlinedInput value={inputValue} onChange={handleInputChange}/>

@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.text_example{
+    font-style: italic;
+}
+
 .input_wrapper {
     margin: 40px 0;
     display: flex;
